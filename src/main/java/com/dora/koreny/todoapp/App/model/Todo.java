@@ -1,4 +1,4 @@
-package com.dora.koreny.todoapp.model;
+package com.dora.koreny.todoapp.App.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +19,8 @@ public class Todo {
     private Long id;
 
     private String title;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public boolean isComplete() {

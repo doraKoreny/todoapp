@@ -1,16 +1,15 @@
-package com.dora.koreny.todoapp;
+package com.dora.koreny.todoapp.App.init;
 
-import com.dora.koreny.todoapp.model.Status;
-import com.dora.koreny.todoapp.model.Todo;
-import com.dora.koreny.todoapp.repository.TodoRepository;
+import com.dora.koreny.todoapp.App.model.Status;
+import com.dora.koreny.todoapp.App.model.Todo;
+import com.dora.koreny.todoapp.App.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
-public class Init {
+public class Initializer {
 
     @Autowired
     private TodoRepository todoRepository;
@@ -23,7 +22,13 @@ public class Init {
                     .status(Status.ACTIVE)
                     .build();
 
+            Todo secondTodo = Todo.builder()
+                    .title("second-todo")
+                    .status(Status.ACTIVE)
+                    .build();
+
             todoRepository.save(firstTodo);
+            todoRepository.save(secondTodo);
         };
     }
 }
