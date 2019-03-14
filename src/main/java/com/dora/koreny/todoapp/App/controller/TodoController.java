@@ -47,7 +47,7 @@ public class TodoController {
 //     Toggle status by id DB-ben működik, de a sorrendet összecseréli, frontenden is, de a css nem változik
     @PutMapping(path = "/todos/{id}/toggle_status", headers = "Content-type=application/x-www-form-urlencoded")
     public String toggleStatus(@PathVariable("id") long id, @RequestParam(value = "status", required = false) String status) {
-        todoService.toggleStatus(id, status.equals("true"));
+        todoService.toggleStatus(id, status);
         return SUCCESS;
     }
 

@@ -60,9 +60,9 @@ public class TodoService {
         }
     }
 
-    public void toggleStatus(long id, boolean isComplete) {
+    public void toggleStatus(long id, String status) {
         Todo todo = todoRepository.findById(id).orElseThrow(() -> new IllegalStateException("Todo not found"));
-        if (isComplete) {
+        if (todo.isComplete() == status.toUpperCase().equals(todo.getStatus())) {
             todo.setStatus(Status.COMPLETE);
         } else {
             todo.setStatus(Status.ACTIVE);
