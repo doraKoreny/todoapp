@@ -4,11 +4,40 @@
     <meta charset="utf-8" />
     <title>ES6 • TodoMVC</title>
     <link rel="stylesheet" href="css/index.css" />
+    <script src="https://cdn.auth0.com/js/auth0/9.10/auth0.min.js"></script>
 </head>
 <body>
 <section class="todoapp">
     <header class="header">
         <h1>todos</h1>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Auth0 - JavaScript</a>
+
+                    <button id="btn-home-view" class="btn btn-primary btn-margin">
+                        Home
+                    </button>
+
+                    <button id="btn-login" class="btn btn-primary btn-margin">
+                        Log In
+                    </button>
+
+                    <button id="btn-logout" class="btn btn-primary btn-margin">
+                        Log Out
+                    </button>
+
+                </div>
+            </div>
+        </nav>
+        <main class="container">
+            <!-- home view -->
+            <div id="home-view">
+                <h4></h4>
+            </div>
+
+        </main>
+
         <input class="new-todo" placeholder="What needs to be done?" autofocus="autofocus" >
     </header>
     <section style="display:none" class="main">
